@@ -118,6 +118,150 @@ body {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* --- 1. ПОВНОЕКРАННЕ МОБІЛЬНЕ МЕНЮ --- */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    164deg,
+    rgba(0, 64, 128, 1) 0%,
+    rgba(0, 109, 167, 1) 45%,
+    rgba(0, 151, 176, 1) 76%,
+    rgba(131, 224, 127, 1) 100%
+  );
+    z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.fullscreen-menu:target {
+  transform: translateX(0);
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 40px;
+  color: white;
+  text-decoration: none;
+  font-family: "Exo 2", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.close-menu:hover {
+  color: #f9f871;
+}
+
+.mobile-menu-nav {
+  width: 100%;
+  padding: 80px 30px 40px 30px;
+  box-sizing: border-box;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-list > li {
+  margin-bottom: 5px;
+}
+
+/* Посилання без підменю (ПРО НАС, КОНТАКТИ) */
+.mobile-menu-list > li > a {
+  font-family: "Exo 2", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Чекбокси - ховаємо */
+.mobile-dropdown-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Кнопка-тригер для розкриття */
+.mobile-dropdown-trigger {
+  font-family: "Exo 2", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arrow-icon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Підменю - згорнуте за замовчуванням */
+.mobile-sub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+}
+
+.mobile-sub-list li a {
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  color: #e0e0e0;
+  text-decoration: none;
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Активні стани при відкритому чекбоксі */
+.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger {
+  color: #f9f871;
+}
+
+.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger .arrow-icon {
+  transform: rotate(180deg);
+  color: #f9f871;
+}
+
+.mobile-dropdown-item input[type="checkbox"]:checked ~ .mobile-sub-list {
+  max-height: 400px;
+}
+
+
+
+
 /* --- 4. ВИПАДНЕ МЕНЮ --- */
 .dropdown-menu {
   position: absolute;
