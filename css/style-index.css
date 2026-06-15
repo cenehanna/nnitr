@@ -377,7 +377,7 @@ width: 100%; /* ЗАМІНЕНО з 100vw на 100%, щоб уникнути г�
   line-height: 1.15;
   margin-bottom: 20px;
   text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  width: 50vw;
+  width: 70vw;
 }
 
 .btn-primary {
@@ -405,37 +405,6 @@ width: 100%; /* ЗАМІНЕНО з 100vw на 100%, щоб уникнути г�
   margin-left: 5px;
   transform: translateY(1px);
 }
-
-
-.welcome-overlay {
-
-  background: linear-gradient(
-    270deg,
-    rgba(0, 34, 67, 0.645) 0%,
-    rgba(0, 34, 67, 0.843) 65%,
-    rgba(0, 34, 67, 0.891) 100%
-  );
-}
-.btn-primary {
-    font-size: 30px;
-      padding: 30px 60px;
-
-}
-
-.welcome-title {
-  font-size: 55px;
-width: 100%;
-}
-
-
-.welcome-content {
-
-  padding: 0 120px;
-
-}
-  
- 
-
 
 
 /* --- 6. CПИСОК СПЕЦІАЛЬНОСТЕЙ --- */
@@ -1338,84 +1307,5 @@ width: 100%; /* Замінено з 100vw */
 
 
 
-
-/* Верхній шар (z-index: 2) — Текст та кнопка */
-.welcome-content {
-  display: flex !important;
-  flex-direction: column;
-  justify-content: flex-end; 
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%; /* Змінюємо з 90vh на 100%, щоб займати всю висоту */
-  padding: 0 24px; /* Прибираємо нижній відступ звідси */
-  z-index: 2;
-  background: transparent !important;
-}
-
-.welcome-title {
-  font-size: 26px; 
-  width: 100%;
-  color: white;
-  line-height: 1.25;
-  margin-bottom: 30px;
-  white-space: normal;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
-  /* Додаємо автоматичний відступ зверху, щоб контент не прилипав до верху */
-  margin-top: auto;
-}
-
-.btn-primary {
-  font-size: 18px;
-  padding: 16px 32px;
-  width: 100%; 
-  justify-content: center;
-  border-radius: 50px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-  /* Ключова властивість - нижній відступ 20px */
-  margin-bottom: 20px;
-}
-
-   .welcome .welcome-content {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-end !important;
-    position: absolute !important;
-    bottom: 0 !important;
-    top: auto !important;
-    left: 0 !important;
-    width: 100% !important;
-    height: auto !important;
-    padding: 0 24px 170px 24px !important;
-    margin-top: 0 !important;
-    z-index: 2 !important;
-    background: transparent !important;
-  }
-  
-  /* Перебиваємо welcome-title */
-  .welcome .welcome-title {
-    font-size: 26px !important;
-    width: 100% !important;
-    margin-bottom: 30px !important;
-  }
-  
-  /* Перебиваємо btn-primary */
-  .welcome .btn-primary {
-    font-size: 18px !important;
-    padding: 16px 32px !important;
-    width: 100% !important;
-    margin-bottom: 0 !important;
-  }
-  
-  /* Перебиваємо welcome-overlay */
-  .welcome .welcome-overlay {
-  background: linear-gradient(
-    180deg,
-    rgba(0, 99, 192, 0.277) 0%,      /* Перехід у 100% насичений синій на 78% висоти */
-    rgba(0, 99, 192, 0.944) 60%,      /* Перехід у 100% насичений синій на 78% висоти */
-    rgb(0, 99, 192) 100%      /* Фіксація кольору до самого низу */
-  ) !important;
-}
 
 }

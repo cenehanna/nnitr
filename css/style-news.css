@@ -1,0 +1,497 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* --- 1. ГЛОБАЛЬНІ СТИЛІ --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #adadad;
+}
+
+/* --- 2. СТРУКТУРА ХЕДЕРУ --- */
+.main-page-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 110px;
+  align-items: center;
+  background: #004080;
+  background: linear-gradient(
+    164deg,
+    #CCEDFF 0%,
+    #CCF8FF 35%,
+    #D9F2E9 69%,
+    #FDFDCE 92%
+);
+  height: 70px;
+  color: #004080;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  width: 280px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.logo-white {
+  width: 50px;
+  height: 50px;
+}
+
+
+/* --- 3. ГОЛОВНА НАВІГАЦІЯ --- */
+.menu-list {
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-weight: 500;
+}
+
+.menu-list > li {
+  padding: 0 15px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+}
+
+.menu-list a {
+  text-decoration: none;
+  color: #004080;
+  border-bottom: 1px solid transparent;
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.menu-list > li:not(.search-item) > a:hover,
+.menu-list > li:not(.search-item):hover > a {
+  border-bottom-color: #83e07f;
+  color: #83e07f;
+  cursor: pointer;
+}
+
+.search-icon {
+  width: 25px;
+  height: 25px;
+  transform: translateY(2px);
+  color: #004080;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.menu-list a:has(.search-icon):hover {
+  border-bottom-color: transparent !important;
+  cursor: pointer;
+}
+
+.search-box:hover .search-icon {
+  color: #83e07f;
+  transform: translateY(2px) scale(1.1);
+  cursor: pointer;
+}
+
+
+/* ХОВАЄМО бургер на великих екранах */
+.phone-menu {
+  display: none; 
+  color: #004080;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --- 1. ПОВНОЕКРАННЕ МОБІЛЬНЕ МЕНЮ --- */
+.fullscreen-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    164deg,
+    rgba(0, 64, 128, 1) 0%,
+    rgba(0, 109, 167, 1) 45%,
+    rgba(0, 151, 176, 1) 76%,
+    rgba(131, 224, 127, 1) 100%
+  );
+    z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.fullscreen-menu:target {
+  transform: translateX(0);
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 40px;
+  color: #004080;
+  text-decoration: none;
+  font-family: "Exo 2", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.close-menu:hover {
+  color: #f9f871;
+}
+
+.mobile-menu-nav {
+  width: 100%;
+  padding: 80px 30px 40px 30px;
+  box-sizing: border-box;
+}
+
+.mobile-menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-list > li {
+  margin-bottom: 5px;
+}
+
+/* Посилання без підменю (ПРО НАС, КОНТАКТИ) */
+.mobile-menu-list > li > a {
+  font-family: "Exo 2", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #004080;
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(10, 0, 103, 0.1);
+}
+
+/* Чекбокси - ховаємо */
+.mobile-dropdown-item input[type="checkbox"] {
+  display: none;
+}
+
+/* Кнопка-тригер для розкриття */
+.mobile-dropdown-trigger {
+  font-family: "Exo 2", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #004080;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arrow-icon {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  color: rgba(10, 0, 103, 0.7);
+}
+
+/* Підменю - згорнуте за замовчуванням */
+.mobile-sub-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+}
+
+.mobile-sub-list li a {
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  color: #004080;
+  text-decoration: none;
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Активні стани при відкритому чекбоксі */
+.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger {
+  color: #f9f871;
+}
+
+.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger .arrow-icon {
+  transform: rotate(180deg);
+  color: #f9f871;
+}
+
+.mobile-dropdown-item input[type="checkbox"]:checked ~ .mobile-sub-list {
+  max-height: 400px;
+}
+
+
+
+
+/* --- 4. ВИПАДНЕ МЕНЮ --- */
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  min-width: max-content;
+  background-color:#004080;
+  list-style: none;
+  padding: 5px 0;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.25s ease,
+    visibility 0.25s ease,
+    transform 0.25s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  color: #ffffff;
+  font-family: "Exo 2", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  padding: 15px 20px;
+  border-bottom: none !important;
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(0, 64, 128, 0.05);
+  color: rgba(0, 109, 167, 1);
+  padding-left: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+/* --- 9. ПІДВАЛ --- */
+.site-footer {
+  font-family: "Exo 2", sans-serif;
+  width: 100%;
+  background-color: #003a70;
+  padding: 40px 110px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; 
+  gap: 30px;
+}
+
+.footer-logo {
+  flex-shrink: 0;
+}
+
+.footer-logo img {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.contact-group p,
+.contact-group a {
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  min-width: 250px; 
+}
+
+.footer-address {
+  font-size: 15px;
+  font-style: normal;
+  color: #ffffff;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-group a[href^="tel"] {
+  transition: color 0.25s ease;
+}
+
+.contact-group a[href^="tel"]:hover {
+  color: #f9f871;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #f9f871;
+}
+
+.footer-socials a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.25s ease, color 0.25s ease;
+  display: inline-block;
+}
+
+.footer-socials a:hover {
+  color: #f9f871;
+  transform: translateY(-3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ==========================================================================
+   АДАПТИВНА ВЕРСТКА ДЛЯ ПЛАНШЕТІВ (МАКС. ШИРИНА 992px)
+   ========================================================================== */
+@media (max-width: 992px) {  
+
+
+  /* --- 5. ПІДВАЛ (ФУТЕР) --- */
+  .site-footer {
+    padding: 40px 20px; /* Скидаємо відступи 110px */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Елементи футера шикуються в один стовпчик */
+    text-align: center;
+    gap: 40px;
+  }
+
+  .contact-group {
+    text-align: center;
+    min-width: 100%;
+  }
+
+  .footer-info {
+    align-items: center;
+    min-width: 100%;
+  }
+
+  .footer-address {
+    text-align: center;
+  }
+}
+/* ==========================================================================
+   АДАПТИВНА ВЕРСТКА ДЛЯ МОБІЛЬНИХ ТЕЛЕФОНІВ (МАКС. ШИРИНА 576px)
+   ========================================================================== */
+@media (max-width: 576px) {
+
+
+  /* --- 1. СТРУКТУРА ХЕДЕРУ --- */
+  .main-page-header {
+    padding: 0 20px; 
+  }
+
+  .phone-menu {
+    display: block; /* Показуємо іконку бургер-меню */
+  }
+
+  .header-nav {
+    display: none; /* Ховаємо десктопну навігацію */
+  }
+
+
+
+
+  /* --- 6. ПІДВАЛ (ФУТЕР) --- */
+  .footer-container {
+    gap: 30px;
+  }
+
+  .contact-group,
+  .footer-info {
+    align-items: center;
+  }
+
+}
