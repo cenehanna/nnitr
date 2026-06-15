@@ -20,11 +20,11 @@ body {
   background: #004080;
   background: linear-gradient(
     164deg,
-    #CCEDFF 0%,
-    #CCF8FF 35%,
-    #D9F2E9 69%,
-    #FDFDCE 92%
-);
+    #ccedff 0%,
+    #ccf8ff 35%,
+    #d9f2e9 69%,
+    #fdfdce 92%
+  );
   height: 70px;
   color: #004080;
   white-space: nowrap;
@@ -49,7 +49,6 @@ body {
   width: 50px;
   height: 50px;
 }
-
 
 /* --- 3. ГОЛОВНА НАВІГАЦІЯ --- */
 .menu-list {
@@ -107,26 +106,13 @@ body {
   cursor: pointer;
 }
 
-
 /* ХОВАЄМО бургер на великих екранах */
 .phone-menu {
-  display: none; 
+  display: none;
   color: #004080;
   font-size: 30px;
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* --- 1. ПОВНОЕКРАННЕ МОБІЛЬНЕ МЕНЮ --- */
 .fullscreen-menu {
@@ -137,12 +123,12 @@ body {
   height: 100vh;
   background: linear-gradient(
     164deg,
-    rgba(0, 64, 128, 1) 0%,
-    rgba(0, 109, 167, 1) 45%,
-    rgba(0, 151, 176, 1) 76%,
-    rgba(131, 224, 127, 1) 100%
+    #ccedff 0%,
+    #ccf8ff 35%,
+    #d9f2e9 69%,
+    #fdfdce 92%
   );
-    z-index: 9999;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -167,7 +153,7 @@ body {
 }
 
 .close-menu:hover {
-  color: #f9f871;
+  color: #248782;
 }
 
 .mobile-menu-nav {
@@ -195,7 +181,7 @@ body {
   text-decoration: none;
   display: block;
   padding: 15px 0;
-  border-bottom: 1px solid rgba(10, 0, 103, 0.1);
+  border-bottom: 1px solid rgba(10, 0, 103, 0.706);
 }
 
 /* Чекбокси - ховаємо */
@@ -246,21 +232,23 @@ body {
 }
 
 /* Активні стани при відкритому чекбоксі */
-.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger {
-  color: #f9f871;
+.mobile-dropdown-item
+  input[type="checkbox"]:checked
+  + .mobile-dropdown-trigger {
+  color: #248782;
 }
 
-.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger .arrow-icon {
+.mobile-dropdown-item
+  input[type="checkbox"]:checked
+  + .mobile-dropdown-trigger
+  .arrow-icon {
   transform: rotate(180deg);
-  color: #f9f871;
+  color: #248782;
 }
 
 .mobile-dropdown-item input[type="checkbox"]:checked ~ .mobile-sub-list {
   max-height: 400px;
 }
-
-
-
 
 /* --- 4. ВИПАДНЕ МЕНЮ --- */
 .dropdown-menu {
@@ -269,7 +257,7 @@ body {
   top: 70px;
   width: 100%;
   min-width: max-content;
-  background-color:#004080;
+  background-color: #004080;
   list-style: none;
   padding: 5px 0;
   border-radius: 0 0 6px 6px;
@@ -309,15 +297,6 @@ body {
   padding-left: 24px;
 }
 
-
-
-
-
-
-
-
-
-
 /* --- 9. ПІДВАЛ --- */
 .site-footer {
   font-family: "Exo 2", sans-serif;
@@ -333,7 +312,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   gap: 30px;
 }
 
@@ -368,7 +347,7 @@ body {
   flex-direction: column;
   align-items: flex-end;
   gap: 15px;
-  min-width: 250px; 
+  min-width: 250px;
 }
 
 .footer-address {
@@ -389,7 +368,7 @@ body {
 }
 
 .contact-group a[href^="tel"]:hover {
-  color: #f9f871;
+  color: #248782;
 }
 
 .footer-link {
@@ -400,43 +379,28 @@ body {
 }
 
 .footer-link:hover {
-  color: #f9f871;
+  color: #248782;
 }
 
 .footer-socials a {
   color: #ffffff;
   font-size: 24px;
   text-decoration: none;
-  transition: transform 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
   display: inline-block;
 }
 
 .footer-socials a:hover {
-  color: #f9f871;
+  color: #248782;
   transform: translateY(-3px);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* ==========================================================================
    АДАПТИВНА ВЕРСТКА ДЛЯ ПЛАНШЕТІВ (МАКС. ШИРИНА 992px)
    ========================================================================== */
-@media (max-width: 992px) {  
-
-
+@media (max-width: 992px) {
   /* --- 5. ПІДВАЛ (ФУТЕР) --- */
   .site-footer {
     padding: 40px 20px; /* Скидаємо відступи 110px */
@@ -466,11 +430,9 @@ body {
    АДАПТИВНА ВЕРСТКА ДЛЯ МОБІЛЬНИХ ТЕЛЕФОНІВ (МАКС. ШИРИНА 576px)
    ========================================================================== */
 @media (max-width: 576px) {
-
-
   /* --- 1. СТРУКТУРА ХЕДЕРУ --- */
   .main-page-header {
-    padding: 0 20px; 
+    padding: 0 20px;
   }
 
   .phone-menu {
@@ -481,9 +443,6 @@ body {
     display: none; /* Ховаємо десктопну навігацію */
   }
 
-
-
-
   /* --- 6. ПІДВАЛ (ФУТЕР) --- */
   .footer-container {
     gap: 30px;
@@ -493,5 +452,4 @@ body {
   .footer-info {
     align-items: center;
   }
-
 }

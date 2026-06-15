@@ -50,7 +50,6 @@ body {
   height: 50px;
 }
 
-
 /* --- 3. ГОЛОВНА НАВІГАЦІЯ --- */
 .menu-list {
   font-family: "Exo 2", sans-serif;
@@ -107,26 +106,13 @@ body {
   cursor: pointer;
 }
 
-
 /* ХОВАЄМО бургер на великих екранах */
 .phone-menu {
-  display: none; 
+  display: none;
   color: #ffffff;
   font-size: 30px;
   text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* --- 1. ПОВНОЕКРАННЕ МОБІЛЬНЕ МЕНЮ --- */
 .fullscreen-menu {
@@ -142,7 +128,7 @@ body {
     rgba(0, 151, 176, 1) 76%,
     rgba(131, 224, 127, 1) 100%
   );
-    z-index: 9999;
+  z-index: 9999;
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -246,11 +232,16 @@ body {
 }
 
 /* Активні стани при відкритому чекбоксі */
-.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger {
+.mobile-dropdown-item
+  input[type="checkbox"]:checked
+  + .mobile-dropdown-trigger {
   color: #f9f871;
 }
 
-.mobile-dropdown-item input[type="checkbox"]:checked + .mobile-dropdown-trigger .arrow-icon {
+.mobile-dropdown-item
+  input[type="checkbox"]:checked
+  + .mobile-dropdown-trigger
+  .arrow-icon {
   transform: rotate(180deg);
   color: #f9f871;
 }
@@ -258,9 +249,6 @@ body {
 .mobile-dropdown-item input[type="checkbox"]:checked ~ .mobile-sub-list {
   max-height: 400px;
 }
-
-
-
 
 /* --- 4. ВИПАДНЕ МЕНЮ --- */
 .dropdown-menu {
@@ -309,14 +297,11 @@ body {
   padding-left: 24px;
 }
 
-
-
-
 /* --- 5. HERO СЕКЦІЯ --- */
 .welcome {
   display: flex;
-width: 100%; /* ЗАМІНЕНО з 100vw на 100%, щоб уникнути горизонтального скролу */ 
- height: 110vh;
+  width: 100%; /* ЗАМІНЕНО з 100vw на 100%, щоб уникнути горизонтального скролу */
+  height: 110vh;
   position: relative;
 }
 
@@ -406,10 +391,9 @@ width: 100%; /* ЗАМІНЕНО з 100vw на 100%, щоб уникнути г�
   transform: translateY(1px);
 }
 
-
 /* --- 6. CПИСОК СПЕЦІАЛЬНОСТЕЙ --- */
 .specialties {
-width: 100%; 
+  width: 100%;
   height: 110vh;
   position: relative;
 }
@@ -452,7 +436,7 @@ width: 100%;
   z-index: 2;
 }
 
-.specialties-description { 
+.specialties-description {
   font-family: "Montserrat Alternates", sans-serif;
   font-size: 22px;
   font-weight: 600;
@@ -465,7 +449,7 @@ width: 100%;
 }
 
 .specialties-list {
-  list-style:circle;
+  list-style: circle;
   color: #f9f871;
   display: flex;
   flex-direction: column;
@@ -484,19 +468,19 @@ width: 100%;
   transition:
     color 0.25s ease,
     transform 0.25s ease,
-    border-color 0.25s ease; 
+    border-color 0.25s ease;
 }
 
 .specialties-list a:hover {
-  color: #f9f871; 
-  transform: translateX(5px); 
+  color: #f9f871;
+  transform: translateX(5px);
   border-bottom-color: #f9f871;
 }
 
 .specialties-footer {
   text-align: center;
   width: 100%;
-  border-top: 1px solid #f9f97180 ;
+  border-top: 1px solid #f9f97180;
   padding-top: 30px;
 }
 
@@ -508,13 +492,9 @@ width: 100%;
   line-height: 1.3;
 }
 
-
-
-
-
 /* --- 7. БЛОК НОВИН --- */
 .news-main-page {
-width: 100%; /* Замінено з 100vw */
+  width: 100%; /* Замінено з 100vw */
   padding: 60px 110px;
   background-color: white;
 }
@@ -582,11 +562,19 @@ width: 100%; /* Замінено з 100vw */
   width: 50%;
   display: flex;
   flex-direction: column;
-  height: 620px; 
+  height: 620px;
   overflow: hidden;
   position: relative;
-  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
-  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%);
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 75%,
+    rgba(0, 0, 0, 0) 100%
+  );
 }
 
 .small-news-item {
@@ -641,7 +629,9 @@ width: 100%; /* Замінено з 100vw */
   text-decoration: none;
   border-bottom: 2px solid transparent;
   padding-bottom: 4px;
-  transition: color 0.25s ease, border-color 0.25s ease;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .btn-all-news:hover {
@@ -649,11 +639,9 @@ width: 100%; /* Замінено з 100vw */
   border-bottom-color: #006da7;
 }
 
-
-
 /* --- 8. АКАДЕМІЧНА МОБІЛЬНІСТЬ --- */
 .academical-mobility {
-width: 100%; /* Замінено з 100vw */
+  width: 100%; /* Замінено з 100vw */
   padding: 60px 110px 80px 110px;
   background-color: #e6f0fa;
   display: flex;
@@ -713,16 +701,18 @@ width: 100%; /* Замінено з 100vw */
 }
 
 .academics-card-header {
-  display: block; 
+  display: block;
   width: fit-content;
-  font-size: 22px; 
+  font-size: 22px;
   font-weight: 700;
   color: #000000;
   margin-bottom: 12px;
   line-height: 1.3;
-  padding-bottom: 4px; 
-  border-bottom: 2px solid transparent; 
-  transition: color 0.25s ease, border-color 0.25s ease;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition:
+    color 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .academics-card-text {
@@ -742,8 +732,6 @@ width: 100%; /* Замінено з 100vw */
   filter: brightness(0.9);
 }
 
-
-
 /* --- 9. ПІДВАЛ --- */
 .site-footer {
   font-family: "Exo 2", sans-serif;
@@ -759,7 +747,7 @@ width: 100%; /* Замінено з 100vw */
   width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
   gap: 30px;
 }
 
@@ -794,7 +782,7 @@ width: 100%; /* Замінено з 100vw */
   flex-direction: column;
   align-items: flex-end;
   gap: 15px;
-  min-width: 250px; 
+  min-width: 250px;
 }
 
 .footer-address {
@@ -833,7 +821,9 @@ width: 100%; /* Замінено з 100vw */
   color: #ffffff;
   font-size: 24px;
   text-decoration: none;
-  transition: transform 0.25s ease, color 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
   display: inline-block;
 }
 
@@ -842,42 +832,26 @@ width: 100%; /* Замінено з 100vw */
   transform: translateY(-3px);
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* ==========================================================================
    АДАПТИВНА ВЕРСТКА ДЛЯ ПЛАНШЕТІВ (МАКС. ШИРИНА 992px)
    ========================================================================== */
-@media (max-width: 992px) {  
+@media (max-width: 992px) {
+  .welcome-content {
+    padding: 0 70px;
+  }
 
-
-.welcome-content {
-  padding: 0 70px;
-}
-
-.main-page-header {
-  padding: 0 20px;}
+  .main-page-header {
+    padding: 0 20px;
+  }
   /* --- 1. HERO СЕКЦІЯ --- */
   .picture1 {
     width: 100%;
   }
   .picture2 {
     width: 0%;
-  } 
+  }
 
-/* --- 2. СПИСОК СПЕЦІАЛЬНОСТЕЙ --- */
+  /* --- 2. СПИСОК СПЕЦІАЛЬНОСТЕЙ --- */
   .specialties {
     height: 100vh; /* Блок підлаштовується під висоту вмісту */
     padding: 60px 50px; /* Робимо хороші відступи зверху та знизу для тексту */
@@ -907,33 +881,28 @@ width: 100%; /* Замінено з 100vw */
 
   .specialties-container {
     position: relative; /* Переводимо у відносне позиціонування, щоб текст штовхав висоту блоку */
-    padding:0;
+    padding: 0;
     z-index: 2; /* Текст стає поверх усього */
   }
-
 
   .specialties-list {
     margin: 20px 50px; /* Компактні мобільні відступи для списку */
   }
 
+  .specialties-description {
+    font-size: 23px;
+    text-align: center;
+  }
 
-.specialties-description { 
-  font-size: 23px;
-      text-align: center;
-
-}
-
-.specialties-list a {
-  font-size: 22px;
+  .specialties-list a {
+    font-size: 22px;
     line-height: 1.5;
+  }
 
-}
-
-.specialties-action-text {
-  font-size: 19px;
+  .specialties-action-text {
+    font-size: 19px;
     line-height: 1.5;
-}
-
+  }
 
   /* --- 3. БЛОК НОВИН --- */
   .news-main-page {
@@ -950,7 +919,7 @@ width: 100%; /* Замінено з 100vw */
     gap: 30px;
   }
 
-  .main-news, 
+  .main-news,
   .small-news {
     width: 100%;
   }
@@ -1025,10 +994,9 @@ width: 100%; /* Замінено з 100vw */
    АДАПТИВНА ВЕРСТКА ДЛЯ МОБІЛЬНИХ ТЕЛЕФОНІВ (МАКС. ШИРИНА 576px)
    ========================================================================== */
 @media (max-width: 576px) {
-
   /* --- 1. СТРУКТУРА ХЕДЕРУ --- */
   .main-page-header {
-    padding: 0 20px; 
+    padding: 0 20px;
   }
 
   .phone-menu {
@@ -1039,45 +1007,42 @@ width: 100%; /* Замінено з 100vw */
     display: none; /* Ховаємо десктопну навігацію */
   }
 
-
-/* --- 2. HERO СЕКЦІЯ --- */
+  /* --- 2. HERO СЕКЦІЯ --- */
   .welcome {
- margin-bottom: -30px; /* Тільки це + z-index */
+    margin-bottom: -30px; /* Тільки це + z-index */
     position: relative;
     z-index: 2;
 
-
-
     display: flex;
-    flex-direction: column; 
+    flex-direction: column;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     position: relative; /* Обов'язково для прив'язки абсолютних дочірніх елементів */
   }
 
   /* Нижній шар (z-index: 0) — Самі фотографії */
   .picture1 {
     width: 100%;
-    height: 30%; 
+    height: 30%;
     display: block;
     position: relative;
-    z-index: 0; 
+    z-index: 0;
   }
 
   .picture2 {
     width: 100%;
-    height: 70%; 
+    height: 70%;
     display: block;
     position: relative;
-    z-index: 0; 
-    border-radius: 0 0 30px 30px; 
-    overflow: hidden; 
+    z-index: 0;
+    border-radius: 0 0 30px 30px;
+    overflow: hidden;
   }
 
   .welcome img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
   }
 
   /* Середній шар (z-index: 1) — Оверлей з вертикальним градієнтом */
@@ -1089,17 +1054,18 @@ width: 100%; /* Замінено з 100vw */
     width: 100%;
     height: 100%;
     z-index: 1; /* Лягає СУВОРO ПОВЕРХ картинок */
-    border-radius: 0 0 30px 30px; 
+    border-radius: 0 0 30px 30px;
     pointer-events: none; /* Щоб оверлей не заважав клікати по кнопці під ним */
-    
+
     /* Вертикальний градієнт: прозорий вгорі, синій знизу */
     background: linear-gradient(
       180deg,
-      rgba(0, 34, 67, 0) 0%,           /* Абсолютно прозоро вгорі */
-      rgba(0, 34, 67, 0.3) 25%,        /* Легке тонування першої картинки */
-      rgba(0, 34, 67, 0.8) 55%,        /* Посилення кольору на стику картинок */
-      rgba(0, 34, 67, 0.95) 80%,       /* Насичений синій під текстом */
-      rgba(0, 34, 67, 1) 100%          /* Повністю непрозорий синій в самому низу */
+      rgba(0, 34, 67, 0.239) 0%,
+      /* Абсолютно прозоро вгорі */ rgba(0, 34, 67, 0.512) 25%,
+      /* Легке тонування першої картинки */ rgba(0, 34, 67, 0.8) 55%,
+      /* Посилення кольору на стику картинок */ rgba(0, 34, 67, 0.95) 80%,
+      /* Насичений синій під текстом */ rgba(0, 34, 67, 1) 100%
+        /* Повністю непрозорий синій в самому низу */
     );
   }
 
@@ -1107,31 +1073,32 @@ width: 100%; /* Замінено з 100vw */
   .welcome-content {
     display: flex !important; /* Скасовуємо десктопний або попередній display: none */
     flex-direction: column;
-    justify-content: flex-end; 
+    justify-content: flex-end;
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 90vh;
-    padding: 0 24px 60px 24px; 
+    padding: 0 24px 60px 24px;
     z-index: 2; /* Виносимо контент на самий верх, щоб він не перекривався градієнтом */
     background: transparent !important; /* Захист: скидаємо будь-який суцільний фон, якщо він прописаний вище */
   }
 
   .welcome-title {
-    font-size: 26px; 
+    font-size: 26px;
     width: 100%;
     color: white;
     line-height: 1.25;
     margin-bottom: 30px;
     white-space: normal;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4); 
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   }
 
   .btn-primary {
+    margin-bottom: 50px;
     font-size: 18px;
     padding: 16px 32px;
-    width: 100%; 
+    width: 100%;
     justify-content: center;
     border-radius: 50px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -1143,21 +1110,21 @@ width: 100%; /* Замінено з 100vw */
     padding: 0;
     padding-top: 30px;
 
-       position: relative;
+    position: relative;
     z-index: 1;
     margin-top: 0;
   }
 
   .specialties-container {
-    padding: 40px 20px; 
+    padding: 40px 20px;
   }
 
   .specialties-description {
-    font-size: 18px; 
+    font-size: 18px;
   }
 
   .specialties-list {
-    margin: 20px 0 20px 15px; 
+    margin: 20px 0 20px 15px;
   }
 
   .specialties-list a {
@@ -1166,7 +1133,7 @@ width: 100%; /* Замінено з 100vw */
   }
 
   /* --- 4. БЛОК НОВИН (Усі новини стають однаковими) --- */
-   .news-main-page {
+  .news-main-page {
     padding: 40px 20px;
   }
 
@@ -1256,8 +1223,6 @@ width: 100%; /* Замінено з 100vw */
     margin-bottom: 0;
   }
 
-
-
   /* --- 5. АКАДЕМІЧНА МОБІЛЬНІСТЬ --- */
   .academical-mobility {
     padding: 40px 20px;
@@ -1278,13 +1243,12 @@ width: 100%; /* Замінено з 100vw */
   }
 
   .academics-card-image {
-    height: 200px; 
+    height: 200px;
   }
 
   .academics-card-header {
     font-size: 18px;
   }
-
 
   /* --- 6. ПІДВАЛ (ФУТЕР) --- */
   .site-footer {
@@ -1304,8 +1268,4 @@ width: 100%; /* Замінено з 100vw */
     min-width: 100%;
     align-items: center;
   }
-
-
-
-
 }
