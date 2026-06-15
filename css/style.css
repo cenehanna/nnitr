@@ -999,7 +999,7 @@ width: 100%; /* Замінено з 100vw */
     top: 0;
     left: 0;
     width: 100%;
-    height: 90%;
+    height: 90vh;
     padding: 0 24px 60px 24px; 
     z-index: 2; /* Виносимо контент на самий верх, щоб він не перекривався градієнтом */
     background: transparent !important; /* Захист: скидаємо будь-який суцільний фон, якщо він прописаний вище */
@@ -1030,12 +1030,9 @@ width: 100%; /* Замінено з 100vw */
     padding: 0;
     padding-top: 30px;
 
-
-
        position: relative;
     z-index: 1;
     margin-top: 0;
-  }
   }
 
   .specialties-container {
@@ -1056,65 +1053,96 @@ width: 100%; /* Замінено з 100vw */
   }
 
   /* --- 4. БЛОК НОВИН (Усі новини стають однаковими) --- */
-  .news-main-page {
-    padding: 40px 20px; 
+   .news-main-page {
+    padding: 40px 20px;
   }
 
   .news-page-title {
-    font-size: 28px; 
+    font-size: 28px;
     margin-bottom: 30px;
   }
 
   .news-block {
-    flex-direction: column; 
-    gap: 40px; 
+    flex-direction: column;
+    gap: 0;
   }
 
-  .main-news, 
-  .small-news {
+  /* Повне скидання стилів для головної новини */
+  .main-news {
     width: 100%;
-    height: auto; 
-    -webkit-mask-image: none; 
-    mask-image: none;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   .main-news-image-wrapper {
-    height: 200px; 
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+    overflow: hidden;
+  }
+
+  .main-news-image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .main-news-header {
-    font-size: 20px; 
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .main-news-text {
     font-size: 15px;
   }
 
+  /* Скидання стилів для стрічки новин */
+  .small-news {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+    -webkit-mask-image: none;
+    mask-image: none;
+    position: static;
+  }
+
   .small-news-item {
     padding-bottom: 25px;
     margin-bottom: 25px;
+    border-bottom: 1px solid #e0e0e0;
   }
 
   .small-news-content {
-    flex-direction: column; 
+    flex-direction: column;
     gap: 15px;
   }
 
   .small-news-content img {
-    width: 100%; 
-    height: 200px; 
-    border-radius: 0; 
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
 
   .small-news-header {
-    font-size: 20px; 
-    margin-bottom: 15px;
+    font-size: 20px;
+    margin-bottom: 10px;
   }
 
   .small-news-content p {
-    font-size: 15px; 
-    line-height: 1.5;
+    font-size: 15px;
   }
+
+  /* Видаляємо нижню лінію в останньої новини */
+  .small-news-item:last-child,
+  .main-news:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+}
 
 
   /* --- 5. АКАДЕМІЧНА МОБІЛЬНІСТЬ --- */
