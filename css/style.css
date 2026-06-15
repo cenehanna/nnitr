@@ -909,7 +909,6 @@ width: 100%; /* Замінено з 100vw */
   }
 }
 
-
 /* ==========================================================================
    АДАПТИВНА ВЕРСТКА ДЛЯ МОБІЛЬНИХ ТЕЛЕФОНІВ (МАКС. ШИРИНА 576px)
    ========================================================================== */
@@ -928,7 +927,8 @@ width: 100%; /* Замінено з 100vw */
     display: none; /* Ховаємо десктопну навігацію */
   }
 
-  /* --- 2. HERO СЕКЦІЯ (Крок 1: Дві картинки одна над одною) --- */
+
+  /* --- 2. HERO СЕКЦІЯ --- */
   .welcome {
     display: flex;
     flex-direction: column; /* Вишиковуємо вміст строго вертикально */
@@ -936,34 +936,174 @@ width: 100%; /* Замінено з 100vw */
     height: 120vh; /* Робимо розділ трохи більшим за екран телефона */
   }
 
-  .welcome-content {
-    padding: 0 20px; 
-  }
-
-  .welcome-title {
-    font-size: 26px; /* Оптимальний розмір шрифту для екрана смартфона */
+  .picture1 {
     width: 100%;
-  }
-
-.picture1,
-  .picture2 {
-    width: 100%;
-    height: 50%; /* Кожна картинка займає рівно половину від загальної висоти (120vh) */
+    height: 30%; 
     display: block;
   }
 
-.welcome img {
+  .picture2 {
+    width: 100%;
+    height: 70%; 
+    display: block;
+  }
+
+  .welcome img {
     width: 100%;
     height: 100%;
     object-fit: cover; /* Зображення заповнюють свої контейнери без деформації */
   }
 
-  /* Тимчасово ховаємо контент і старий оверлей для цього кроку */
+  /* Тимчасово приховані за вашим планом елементи */
   .welcome-overlay {
     display: none;
   }
   .welcome-content {
     display: none;
+    padding: 0 20px; 
   }
 
+  .welcome-title {
+    font-size: 26px; 
+    width: 100%;
+  }
+
+
+  /* --- 3. СПИСОК СПЕЦІАЛЬНОСТЕЙ --- */
+  .specialties {
+    height: auto;
+    padding: 0;
+  }
+
+  .specialties-container {
+    padding: 40px 20px; /* Зменшуємо бокові падінги до 20px */
+  }
+
+  .specialties-description {
+    font-size: 16px; /* Трохи компактніший заголовок для телефонів */
+  }
+
+  .specialties-list {
+    margin: 20px 0 20px 15px; /* Компактніші відступи списку */
+  }
+
+  .specialties-list a {
+  font-size: 20px;
+    line-height: 1.5;
+
+}
+
+  /* --- 4. БЛОК НОВИН (Усі новини стають однаковими) --- */
+  .news-main-page {
+    padding: 40px 20px; /* Відступи секції зліва і справа по 20px */
+  }
+
+  .news-page-title {
+    font-size: 28px; /* Зменшуємо головний заголовок секції */
+    margin-bottom: 30px;
+  }
+
+  .news-block {
+    flex-direction: column; /* Розгортаємо ліву і праву колонки в один стовпчик */
+    gap: 40px; /* Відступ між головною новиною та блоком малих новин */
+  }
+
+  /* Зрівнюємо ширину контейнерів */
+  .main-news, 
+  .small-news {
+    width: 100%;
+    height: auto; /* Знімаємо фіксовані 620px з малих новин */
+    -webkit-mask-image: none; /* Повністю прибираємо десктопне затухання */
+    mask-image: none;
+  }
+
+  /* Зрівнюємо картинку головної новини */
+  .main-news-image-wrapper {
+    height: 200px; /* Робимо висоту картинки акуратною для екрана телефону */
+  }
+
+  .main-news-header {
+    font-size: 20px; /* Приводимо заголовок головної новини до загального стандарту */
+  }
+
+  .main-news-text {
+    font-size: 15px;
+  }
+
+  /* --- Перебудова Малих новин під вигляд Головної --- */
+  .small-news-item {
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+  }
+
+  .small-news-content {
+    flex-direction: column; /* Змушуємо картинку малої новини стати НАД текстом */
+    gap: 15px;
+  }
+
+  /* Перетворюємо картинку малої новини на повноцінний банер, як у головної */
+  .small-news-content img {
+    width: 100%; 
+    height: 200px; /* Висота один в один як у головної новини */
+    border-radius: 0; /* Скидаємо радіуси, якщо вони заважають однорідності */
+  }
+
+  /* Перетворюємо заголовок малої новини */
+  .small-news-header {
+    font-size: 20px; /* Однаковий розмір із .main-news-header */
+    margin-bottom: 15px;
+  }
+
+  .small-news-content p {
+    font-size: 15px; /* Jednakowy розмір із .main-news-text */
+    line-height: 1.5;
+  }
+
+
+  /* --- 5. АКАДЕМІЧНА МОБІЛЬНІСТЬ --- */
+  .academical-mobility {
+    padding: 40px 20px;
+  }
+
+  .mobility-title {
+    font-size: 26px;
+    margin-bottom: 10px;
+  }
+
+  .mobility-subtitle {
+    margin-bottom: 30px;
+  }
+
+  .academics-block {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .academics-card-image {
+    height: 200px; /* Зменшуємо висоту карток під формат картинок новин */
+  }
+
+  .academics-card-header {
+    font-size: 18px;
+  }
+
+
+  /* --- 6. ПІДВАЛ (ФУТЕР) --- */
+  .site-footer {
+    padding: 40px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact-group,
+  .footer-info,
+  .footer-address {
+    text-align: center;
+    min-width: 100%;
+    align-items: center;
+  }
 }
