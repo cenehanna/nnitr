@@ -1243,7 +1243,7 @@ width: 100%; /* Замінено з 100vw */
     left: 0 !important;
     width: 100% !important;
     height: auto !important;
-    padding: 0 24px 100px 24px !important;
+    padding: 0 24px 170px 24px !important;
     margin-top: 0 !important;
     z-index: 2 !important;
     background: transparent !important;
@@ -1266,14 +1266,12 @@ width: 100%; /* Замінено з 100vw */
   
   /* Перебиваємо welcome-overlay */
   .welcome .welcome-overlay {
-    background: linear-gradient(
-      180deg,
-      rgba(0, 34, 67, 0) 0%,
-      rgba(0, 34, 67, 0.3) 25%,
-      rgba(0, 34, 67, 0.8) 55%,
-      rgba(0, 34, 67, 0.95) 80%,
-      rgba(0, 34, 67, 1) 100%
-    ) !important;
-  }
+  background: linear-gradient(
+    180deg,
+    rgba(0, 99, 192, 0.277) 0%,      /* Перехід у 100% насичений синій на 78% висоти */
+    rgba(0, 99, 192, 0.944) 60%,      /* Перехід у 100% насичений синій на 78% висоти */
+    rgb(0, 99, 192) 100%      /* Фіксація кольору до самого низу */
+  ) !important;
+}
 
 }
