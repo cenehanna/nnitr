@@ -11,7 +11,7 @@ function HomePage() {
 
   // Завантаження новин з бекенду
   useEffect(() => {
-    fetch("http://localhost:3000/api/news")
+    fetch("${import.meta.env.VITE_API_URL}/api/news")
       .then((res) => {
         if (!res.ok) throw new Error("Помилка завантаження новин");
         return res.json();
