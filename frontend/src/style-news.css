@@ -1,0 +1,1106 @@
+@import url("https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* --- 1. ГЛОБАЛЬНІ СТИЛІ --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #ffffff;
+}
+
+/* --- 2. СТРУКТУРА ХЕДЕРУ --- */
+.main-page-header-light {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 110px;
+  align-items: center;
+  background: linear-gradient(
+    164deg,
+    #ccedff 0%,
+    #ccf8ff 35%,
+    #d9f2e9 69%,
+    #fdfdce 92%
+  );
+  height: 70px;
+  color: #004080;
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  z-index: 10;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 700;
+  width: 280px;
+  font-size: 13px;
+  line-height: 1;
+}
+
+.logo-white {
+  width: 50px;
+  height: 50px;
+}
+
+/* --- 3. ГОЛОВНА НАВІГАЦІЯ --- */
+.menu-list-light {
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+  font-weight: 500;
+}
+
+.menu-list-light > li {
+  padding: 0 15px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  white-space: nowrap;
+}
+
+.menu-list-light a {
+  text-decoration: none;
+  color: #004080;
+  border-bottom: 1px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.menu-list-light > li:not(.search-item) > a:hover,
+.menu-list-light > li:not(.search-item):hover > a {
+  border-bottom-color: #248782;
+  color: #248782;
+  cursor: pointer;
+}
+
+.search-icon-light {
+  width: 25px;
+  height: 25px;
+  transform: translateY(2px);
+  color: #004080;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.menu-list-light a:has(.search-icon-light):hover {
+  border-bottom-color: transparent !important;
+  cursor: pointer;
+}
+
+.search-box:hover .search-icon-light {
+  color: #248782;
+  transform: translateY(2px) scale(1.1);
+  cursor: pointer;
+}
+
+.phone-menu-light {
+  display: none;
+  color: #004080;
+  font-size: 30px;
+  text-decoration: none;
+}
+
+/* --- ПОВНОЕКРАННЕ МОБІЛЬНЕ МЕНЮ --- */
+.fullscreen-menu-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    164deg,
+    #ccedff 0%,
+    #ccf8ff 35%,
+    #d9f2e9 69%,
+    #fdfdce 92%
+  );
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.4s ease-in-out;
+}
+
+.fullscreen-menu-light:target,
+.fullscreen-menu-light.active {
+  transform: translateX(0);
+}
+
+.close-menu-light {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 40px;
+  color: #004080;
+  text-decoration: none;
+  font-family: "Exo 2", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.close-menu-light:hover {
+  color: #248782;
+}
+
+.mobile-menu-nav-light {
+  width: 100%;
+  padding: 80px 30px 40px 30px;
+  box-sizing: border-box;
+}
+
+.mobile-menu-list-light {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mobile-menu-list-light > li {
+  margin-bottom: 5px;
+}
+
+.mobile-menu-list-light > li > a {
+  font-family: "Exo 2", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #004080;
+  text-decoration: none;
+  display: block;
+  padding: 15px 0;
+  border-bottom: 1px solid rgba(10, 0, 103, 0.706);
+}
+
+.mobile-dropdown-item-light input[type="checkbox"] {
+  display: none;
+}
+
+.mobile-dropdown-trigger-light {
+  font-family: "Exo 2", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
+  color: #004080;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  cursor: pointer;
+  user-select: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.arrow-icon-light {
+  font-size: 14px;
+  transition: transform 0.3s ease;
+  color: rgba(10, 0, 103, 0.7);
+}
+
+.mobile-sub-list-light {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  padding-left: 15px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out;
+}
+
+.mobile-sub-list-light li a {
+  font-family: "Exo 2", sans-serif;
+  font-size: 16px;
+  color: #004080;
+  text-decoration: none;
+  display: block;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.mobile-dropdown-item-light input[type="checkbox"]:checked + .mobile-dropdown-trigger-light {
+  color: #248782;
+}
+
+.mobile-dropdown-item-light input[type="checkbox"]:checked + .mobile-dropdown-trigger-light .arrow-icon-light {
+  transform: rotate(180deg);
+  color: #248782;
+}
+
+.mobile-dropdown-item-light input[type="checkbox"]:checked ~ .mobile-sub-list-light {
+  max-height: 400px;
+}
+
+/* --- 4. ВИПАДНЕ МЕНЮ --- */
+.dropdown-menu {
+  position: absolute;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  min-width: max-content;
+  background-color: white;
+  list-style: none;
+  padding: 5px 0;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-menu a {
+  color: #004080;
+  font-family: "Exo 2", sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  display: block;
+  padding: 15px 20px;
+  border-bottom: none !important;
+  transition: background-color 0.2s ease, color 0.2s ease, padding-left 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: rgba(0, 64, 128, 0.05);
+  color: rgba(0, 109, 167, 1);
+  padding-left: 24px;
+}
+
+/* --- СТИЛІ СТОРІНКИ НОВИН --- */
+.news-page-container {
+  width: 100%;
+  padding: 30px 110px;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.breadcrumbs {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+  width: 100%;
+  padding: 15px 110px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.098);
+  margin-bottom: 30px;
+}
+
+.breadcrumbs a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbs .separator {
+  font-size: 10px;
+  color: #999;
+}
+
+.breadcrumbs .current-page {
+  color: #333;
+  font-weight: 400;
+}
+
+.news-article-card {
+  font-family: "Exo 2", sans-serif;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.news-image-wrapper {
+  flex: 1.7;
+  min-width: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.news-image-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.news-content-wrapper {
+  flex: 1;
+  min-width: 250px;
+}
+
+.news-date {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: block;
+  font-size: 16px;
+  color: #248782;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.news-main-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.news-text-body p {
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* СІТКА ДРУГОРЯДНИХ НОВИН */
+.section-title {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #000000;
+  margin: 40px 0 30px 0;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #248782;
+  display: inline-block;
+}
+
+.news-grid {
+  font-family: "Exo 2", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px 30px;
+  margin-bottom: 50px;
+}
+
+.news-grid-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-grid-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-image-box {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.card-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.news-grid-card:hover .card-image-box img {
+  transform: scale(1.05);
+}
+
+.image-overlay-text {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  top: auto;
+  transform: none;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.card-info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  display: inline-block;
+  width: fit-content;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom-color 0.3s ease, color 0.3s ease;
+}
+
+.news-grid-card:hover .card-title {
+  color: #248782;
+  border-bottom-color: #248782;
+}
+
+.card-date {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 13px;
+  color: #248782;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.card-description {
+  font-size: 15px;
+  color: #555555;
+  line-height: 1.5;
+  margin: 0;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.main-news-item {
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 30px;
+  margin-bottom: 40px;
+}
+
+/* КНОПКА ТА ПАГІНАЦІЯ */
+.news-footer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+
+.btn-load-more {
+  font-family: "Montserrat Alternates", sans-serif;
+  background: #004080;
+  color: #ffffff;
+  border: none;
+  padding: 16px 80px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-load-more:hover {
+  background-color: #248782;
+  transform: translateY(-1px);
+}
+
+.pagination-divider {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #e0e0e0;
+  margin: 0 0 30px 0;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0 40px 0;
+}
+
+.pagination-text-arrow {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #888888;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.pagination-text-arrow:hover {
+  color: #004080;
+}
+
+.pagination-list {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-number {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  color: #004080;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.pagination-number.active {
+  background-color: transparent;
+  border-color: #004080;
+  color: #004080;
+}
+
+.pagination-number:hover:not(.active) {
+  background-color: #f5f5f5;
+}
+
+.pagination-dots {
+  font-family: "Montserrat Alternates", sans-serif;
+  color: #54626f;
+  font-weight: 500;
+}
+
+/* --- 9. ПІДВАЛ --- */
+.site-footer {
+  font-family: "Exo 2", sans-serif;
+  width: 100%;
+  background-color: #003a70;
+  padding: 40px 110px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+}
+
+.footer-logo {
+  flex-shrink: 0;
+}
+
+.footer-logo img {
+  width: 110px;
+  height: auto;
+  display: block;
+}
+
+.contact-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.contact-group p,
+.contact-group a {
+  font-size: 15px;
+  color: #ffffff;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 15px;
+  min-width: 250px;
+}
+
+.footer-address {
+  font-size: 15px;
+  font-style: normal;
+  color: #ffffff;
+  text-align: right;
+  line-height: 1.4;
+}
+
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-group a[href^="tel"] {
+  transition: color 0.25s ease;
+}
+
+.contact-group a[href^="tel"]:hover {
+  color: #248782;
+}
+
+.footer-link {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.25s ease;
+}
+
+.footer-link:hover {
+  color: #248782;
+}
+
+.footer-socials a {
+  color: #ffffff;
+  font-size: 24px;
+  text-decoration: none;
+  transition: transform 0.25s ease, color 0.25s ease;
+  display: inline-block;
+}
+
+.footer-socials a:hover {
+  color: #248782;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   САЙТ З ОДНІЄЮ НОВИНОЮ (ДВОКОЛОНКОВА СТРУКТУРА)
+   ========================================================================== */
+.single-news-layout {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  padding-top: 20px;
+}
+
+.article-main-column {
+  flex: 2.5;
+  min-width: 0;
+}
+
+.article-publication-date {
+  font-family: "Montserrat Alternates", sans-serif;
+  display: block;
+  font-size: 16px;
+  color: #248782;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.article-page-title {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 36px;
+  font-weight: 700;
+  color: #000000;
+  line-height: 1.25;
+  margin-bottom: 20px;
+}
+
+.article-main-media {
+  margin-bottom: 30px;
+  max-height: 480px;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.article-main-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.article-text-paragraph-box {
+  font-family: "Exo 2", sans-serif;
+  padding: 0 20px;
+}
+
+.article-text-paragraph-box p {
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.side-news-panel {
+  flex: 1;
+  background: #ffffff;
+  padding-left: 30px;
+  position: sticky;
+  top: 90px;
+}
+
+.side-panel-heading {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0 0 25px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #248782;
+  width: 100%;
+}
+
+.side-news-vertical-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.side-news-mini-card {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.side-card-preview-img {
+  width: 90px;
+  height: 70px;
+  min-width: 90px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.side-card-preview-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.side-card-text-details {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.side-card-posted-time {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 12px;
+  color: #707070;
+  font-weight: 500;
+}
+
+.side-card-clickable-title {
+  font-family: "Exo 2", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.side-card-clickable-title a {
+  color: #000000;
+  text-decoration: none;
+  transition: color 0.2s ease;
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.side-news-mini-card:hover .side-card-clickable-title a {
+  color: #248782;
+}
+
+/* ==========================================================================
+   АДАПТИВНА ВЕРСТКА
+   ========================================================================== */
+
+/* --- ПЛАНШЕТИ (до 992px) --- */
+@media (max-width: 992px) {
+
+  
+  /* Хедер */
+  .main-page-header-light {
+    padding: 0 20px;
+  }
+
+  /* Хлібні крихти */
+  .breadcrumbs {
+    padding: 12px 40px;
+  }
+
+  /* Контейнер новин */
+  .news-page-container {
+    padding: 30px 40px;
+  }
+
+  /* Картка новини */
+  .news-article-card {
+    gap: 30px;
+  }
+
+  .news-main-title {
+    font-size: 28px;
+  }
+
+  /* Сітка новин - 2 колонки */
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  /* Сайдбар однієї новини */
+  .single-news-layout {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .side-news-panel {
+    width: 100%;
+    border-left: none;
+    border-top: 1px solid #e0e0e0;
+    padding-left: 0;
+    padding-top: 30px;
+    position: static;
+  }
+
+  .side-news-vertical-stack {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  /* Футер */
+  .site-footer {
+    padding: 40px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+  }
+
+  .contact-group {
+    text-align: center;
+    min-width: 100%;
+  }
+
+  .footer-info {
+    align-items: center;
+    min-width: 100%;
+  }
+
+  .footer-address {
+    text-align: center;
+  }
+
+   .news-article-card {
+    flex-direction: column;
+  }
+}
+
+/* --- ТЕЛЕФОНИ (до 576px) --- */
+@media (max-width: 576px) {
+  /* Хедер */
+  .main-page-header-light {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .phone-menu-light {
+    display: block;
+    font-size: 24px;
+  }
+
+  .header-nav-light {
+    display: none;
+  }
+
+  .header-logo {
+    width: auto;
+    font-size: 11px;
+  }
+
+  .logo-white {
+    width: 40px;
+    height: 40px;
+  }
+
+  /* Хлібні крихти */
+  .breadcrumbs {
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    font-size: 13px;
+  }
+
+  /* Контейнер новин */
+  .news-page-container {
+    padding: 20px 15px;
+  }
+
+  /* Картка новини */
+  .news-article-card {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .news-image-wrapper,
+  .news-content-wrapper {
+    flex: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .news-main-title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .news-text-body p {
+    font-size: 15px;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  /* Сітка новин - 1 колонка */
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .card-image-box {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 17px;
+  }
+
+  .card-description {
+    font-size: 14px;
+  }
+
+  /* Кнопка "Більше новин" */
+  .btn-load-more {
+    width: 100%;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+
+  /* Пагінація */
+  .pagination-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .pagination-list {
+    order: 1;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pagination-text-arrow.prev {
+    order: 2;
+  }
+
+  .pagination-text-arrow.next {
+    order: 3;
+  }
+
+  .pagination-text-arrow span {
+    display: none;
+  }
+
+  .pagination-number {
+    width: 32px;
+    height: 32px;
+    font-size: 13px;
+  }
+
+  /* Сайдбар однієї новини */
+  .article-text-paragraph-box {
+    padding: 0;
+  }
+
+  .article-text-paragraph-box p {
+    font-size: 16px;
+  }
+
+  .article-page-title {
+    font-size: 23px;
+  }
+
+  .side-news-vertical-stack {
+    grid-template-columns: 1fr;
+  }
+
+  .side-news-mini-card {
+    gap: 12px;
+  }
+
+  .side-card-preview-img {
+    width: 80px;
+    height: 65px;
+    min-width: 80px;
+  }
+
+  /* Футер */
+  .site-footer {
+    padding: 30px 20px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .contact-group,
+  .footer-info,
+  .footer-address {
+    text-align: center;
+    min-width: 100%;
+    align-items: center;
+  }
+
+  .footer-logo img {
+    width: 90px;
+  }
+
+  .contact-group p,
+  .contact-group a {
+    font-size: 14px;
+  }
+
+  .footer-socials a {
+    font-size: 22px;
+  }
+}
