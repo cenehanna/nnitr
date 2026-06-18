@@ -28,7 +28,7 @@ function NewsPage() {
 
   useEffect(() => {
     setIsLoading(true);
-    fetch("${import.meta.env.VITE_API_URL}/api/news")
+    fetch("https://nnitrbackend.onrender.com/api/news")
       .then((res) => res.json())
       .then((data) => {
         const sorted = data.sort(
@@ -49,7 +49,7 @@ function NewsPage() {
   useEffect(() => {
     if (id) {
       setIsLoading(true);
-      fetch(`${import.meta.env.VITE_API_URL}/api/news/${id}`)
+      fetch(`https://nnitrbackend.onrender.com/api/news/${id}`)
         .then((res) => res.json())
         .then((data) => {
           setSelectedNews(data);
